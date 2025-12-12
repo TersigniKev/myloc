@@ -18,8 +18,8 @@
             <tbody>
                 {% for item in items %}
                     <tr>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.description }}</td>
+                        <td>{{ item.name|capitalize  }}</td>
+                        <td>{{ item.description|raw  }}</td>
                         <td class="d-flex gap-3 justify-content-center">
                         {{ include('item/_delete_form.html.twig') }}
                         </td>

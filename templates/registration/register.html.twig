@@ -3,7 +3,7 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1 class="display-1 text-center text-white mb-5">Register</h1>
+    <h1 class="display-1 text-center text-white mb-5">Creation du compte</h1>
 
     <div class="container-fluid w-75">
         {{ form_start(registrationForm) }}
@@ -12,14 +12,14 @@
             {{ form_row(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
             
             {{ form_row(registrationForm.plainPassword, {
-                'label': 'Password',
+                'label': 'Mot de passe',
                 'attr': {'class': 'form-control'}
             }) }}
 
             {{ form_row(registrationForm.agreeTerms) }}
             
             <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary">Valider</button>
             </div>
         </div>
         {{ form_end(registrationForm) }}

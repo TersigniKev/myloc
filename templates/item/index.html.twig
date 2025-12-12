@@ -3,26 +3,31 @@
 {% block title %}Objets{% endblock %}
 
 {% block body %}
-    <h1 class="display-1 text-center text-white mb-5">Tous les outils</h1>
+    <h1 class="display-1 text-center text-white mb-5">Tous les objets</h1>
 
-    <table class="table w-50 mx-auto bg-white rounded-3 shadow-lg table-hover table-striped text-center">
-        <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Voir plus</th>
-                </tr>
-            </thead>
-        <tbody>
+    {% if items is empty %}
+        <p>Aucun item.</p>
+    {% else %} 
+        <div class="row row-cols-1 row-cols-md-4 g-4 w-100 mx-auto justify-content-center">
             {% for item in items %}
-                <tr>
-                    <td>{{ item.name|capitalize }}</td>
-                    <td><a href="{{ path('app_showItem', {'id': item.id}) }}"><i class="fa-solid fa-eye"></i></a></td>
-                </tr>
+            <div class="card mb-5 border border-dark me-2 shadow-lg" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ asset('uploads/' ~ item.picture) }}" alt="{{ item.name }}" class="img-fluid rounded-start mt-5">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title mb-3">{{ item.name|capitalize }}</h5>
+                            <p class="card-text me-5">{{ item.description|raw }}</p>
+                            <p class="card-text mt-5"><a href="{{ path('app_showItem', {'id': item.id}) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i> Voir</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% endfor %}
-        </tbody>
-    </table>
-    <div class="text-center my-4 mt-5 ">
-        <a href="{{ path('app_category') }}" class="btn btn-primary">Rechercher par categorie</a>
-    </div>
-
+        </div>
+        <div class="text-center my-4 mt-5 ">
+            <a href="{{ path('app_category') }}" class="btn btn-primary">Rechercher par categorie</a>
+        </div>
+    {% endif %}
 {% endblock %}

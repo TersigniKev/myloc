@@ -8,40 +8,38 @@
     {# <p>Bienvenue {{ app.user.email }}</p> #}
 </div>
 <div class="d-flex flex-column justify-content-center align-items-center mb-5">
-<div class="card text-center">
-  <div class="card-header">
-    <i class="fa-solid fa-user"><small><em> {{ app.user.points }} points </em></small></i>
-  </div>
-  <div class="card-body">
-    <div class="d-flex">
-      <div class="border me-3 w-50 p-2">
-          <i class="fa-solid fa-list"></i>
-          <a class="nav-link" href="{{ path('app_item_show') }}">Mes objets</a>
+  <div class="card text-center shadow-lg">
+    <div class="card-header">
+      <i class="fa-solid fa-user"><small><em> {{ app.user.points }} points </em></small></i>
+    </div>
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="border me-3 w-50 p-2">
+            <i class="fa-solid fa-list"></i>
+            <a class="nav-link" href="{{ path('app_item_show') }}">Mes objets</a>
+        </div>
+        <div class="border me-3 w-50 p-2">
+            <i class="fa-solid fa-circle-plus"></i>
+            <a class="nav-link" href="{{ path('app_item_new') }}">Ajouter un objet</a>
+        </div>
+        <div class="border me-3 w-50 p-2">
+            <i class="fa-solid fa-xmark"></i>
+            <a class="nav-link" href="{{ path('app_delete') }}">Supprimer un objet</a>
+        </div>
       </div>
-      <div class="border me-3 w-50 p-2">
-          <i class="fa-solid fa-circle-plus"></i>
-          <a class="nav-link" href="{{ path('app_item_new') }}">Ajouter un objet</a>
-      </div>
-      <div class="border me-3 w-50 p-2">
-          <i class="fa-solid fa-xmark"></i>
-          <a class="nav-link" href="{{ path('app_delete') }}">Supprimer un objet</a>
+      <div class="d-flex mt-2">
+        <div class="border me-3 w-50 p-2">
+            <i class="fa-solid fa-cart-plus"></i>
+            <a class="nav-link" href="{{ path('app_loan_show') }}">Mes emprunts</a>
+        </div>
+        <div class="border me-3 w-50 p-2">
+            <i class="fa-solid fa-right-left"></i>
+            <a class="nav-link" href="{{ path('app_owned_show') }}">Mes Prets</a>
+        </div>
       </div>
     </div>
-    <div class="d-flex mt-2">
-      <div class="border me-3 w-50 p-2">
-          <i class="fa-solid fa-cart-plus"></i>
-          <a class="nav-link" href="{{ path('app_loan_show') }}">Mes emprunts</a>
-      </div>
-      <div class="border me-3 w-50 p-2">
-          <i class="fa-solid fa-right-left"></i>
-          <a class="nav-link" href="{{ path('app_owned_show') }}">Mes Prets</a>
-      </div>
+    <div class="card-footer text-body-secondary">
     </div>
   </div>
-  <div class="card-footer text-body-secondary">
-  </div>
-</div>
-
-
 </div>
 {% endblock %}
