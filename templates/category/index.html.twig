@@ -1,20 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategoryController!{% endblock %}
+{% block title %}Category index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1 class="display-1 text-center text-white mb-5">Category index</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/Kevin/Desktop/mylock/src/Controller/CategoryController.php</code></li>
-        <li>Your template at <code>C:/Users/Kevin/Desktop/mylock/templates/category/index.html.twig</code></li>
-    </ul>
-</div>
+    <table class="table w-50 mx-auto bg-white rounded-3 shadow-lg table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cat in category %}
+            <tr>
+                <td><a href="{{ path('app_category_show', {'id': cat.id}) }}">{{ cat.name }}</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center my-4 mt-5 ">
+        <a href="{{ path('app_item') }}" class="btn btn-primary">Retour</a>
+    </div>
 {% endblock %}
+

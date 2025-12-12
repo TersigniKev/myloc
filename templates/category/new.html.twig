@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle categorie{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-5">Creer une nouvelle categorie</h1>
+
+    {{ include('category/_form.html.twig') }}
+
+{# {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('app_product_index') }}">edit</a>
+{% endif %} #}
+
+{% endblock %}

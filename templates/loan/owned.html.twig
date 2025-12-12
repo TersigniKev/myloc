@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes prêts{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-5">Mes prêts</h1>
+
+    {% if loans is empty %}
+        <p class="text-center text-white">Aucun prêt.</p>
+    {% else %}
+    <table class="table w-50 mx-auto bg-white rounded-3 shadow-lg table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Item</th>
+                {# <th>Date d'emprunt</th>
+                <th>Date de retour</th> #}
+            </tr>
+        </thead>
+        <tbody>
+            {% for loan in loans %}
+                <tr>
+                    <td>{{ loan.item.name }}</td>
+                    <td>{{ loan.start ? loan.start|date('Y-m-d') : '' }}</td>
+                    <td>{{ loan.endLoan ? loan.endLoan|date('Y-m-d') : '' }}</td>
+                    <td>{{ loan.utilisateur.email}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<div class="text-center my-4 mt-5 ">
+    <a href="{{ path('app_account') }}" class="btn btn-primary">Retour</a>
+</div>
+
+{% endblock %}

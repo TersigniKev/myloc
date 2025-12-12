@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>BienVenue Sur MyLoc</h1>
+<div class="d-flex justify-content-center align-items-center flex-column">
+    <h1 class="display-3 text-center text-white mb-4">Bienvenue sur MyLoc</h1>
 
-    <div>
-
-        <h2> Appli de Prêt de bien en tout genre !!</h2>
-
+    <div class="border rounded-3 bg-white text-center shadow-lg w-100 p-3">
+        <h2 class="display-5 text-center text-dark text-shadow"><em>
+            Prêtez, empruntez, partagez : du petit outil à l’équipement imposant, facilitez vos projets ensemble !
+        </em></h1>
+        {# <a href="{{ path('app_item_index') }}" class="btn btn-primary btn-lg">Voir tous les objets disponibles</a> #}
     </div>
 </div>
+<div class="container text-center mt-4">
+<h5 class="text-center text-white mb-5 fw-bold"><u> Quelques avantages de MyLoc :</u></h5>
+  <div class="row mt-4">
+    <div class="col border-end">
+        <p class="text-white fw-bold"><u>1. Économiser de l’argent</u></p>
+        <p class="text-white"><small>Pourquoi acheter un outil ou un équipement cher qu’on ne va utiliser qu’une fois ? L’application permet d’emprunter gratuitement ce dont on a besoin.</small></p>
+    </div>
+    <div class="col border-end">
+        <p class="text-white fw-bold"><u>2. Rentabiliser ses objets inutilisés</u></p>
+        <p class="text-white"><small>Les utilisateurs peuvent prêter ce qu’ils possèdent déjà — du petit matériel aux machines plus imposantes — pour rendre service au voisinage.</small></p>
+    </div>
+    <div class="col">
+        <p class="text-white fw-bold"><u>3. Encourager l’entraide et réduire le gaspillage</u></p>
+        <p class="text-white"><small>Partager les objets plutôt que d’en acheter de nouveaux contribue à un mode de consommation plus responsable et renforce les liens entre particuliers.</small></p>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}

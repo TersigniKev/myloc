@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel objet{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-5">Creer un nouvel objet</h1>
+
+    <div class="w-50 mx-auto bg-white rounded-3 shadow-lg p-4">
+    {{ include('item/_form.html.twig') }}
+    </div>
+    <div class="text-center my-4 mt-5 ">
+        <a href="{{ path('app_account') }}" class="btn btn-primary">Retour</a>
+    </div>
+
+{% endblock %}

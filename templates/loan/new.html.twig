@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Emprunt{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-5">Nouvel emprunt</h1>
+
+    <div class="w-50 mx-auto bg-white rounded-3 shadow-lg p-4">
+        {{ include('loan/_form.html.twig') }}
+    </div>
+    <div class="text-center my-4 mt-5 ">
+        <a href="{{ path('app_item') }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

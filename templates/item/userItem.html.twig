@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}objets{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-3">Objets proposé par :</h1>
+    <h2 class="display-3 text-center text-white mb-5">{{ user.email }}</h2>
+
+    {% if items is empty %}
+        <p>Aucun item.</p>
+    {% else %}
+        <table class="table table w-50 mx-auto bg-white rounded-3 shadow-lg table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <div class="text-center my-4 mt-5 ">
+        <a href="{{ path('app_item') }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

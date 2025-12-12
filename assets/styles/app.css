@@ -1,3 +1,11 @@
-body {
-    background-color: skyblue;
+body, .navbar {
+    background: linear-gradient(218deg, #1531e2 0%, #c67250 80%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
+
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+

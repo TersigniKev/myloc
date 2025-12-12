@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}objets{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-5">Fiche objet</h1>
+
+    <table class="table w-50 mx-auto bg-white rounded-3 shadow-lg table-hover table-striped">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ items.name|capitalize }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ items.description|raw  }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><img src="{{ asset('uploads/' ~ items.picture) }}" alt="{{ items.name }}" class="img-fluid" style="max-width:200px;"></td>
+            </tr>
+            <tr>
+                <th>Propriétaire</th>
+                <td><a href="{{ path('app_user_item', { id: items.owner.id }) }}">{{ items.owner }}</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Action</th>
+                <td><a href="{{ path('app_loan_new', { item:items.id }) }}">Emprunter</a></td>
+            </tr>
+    </table>
+    <div class="text-center my-4 mt-5 ">
+        <a href="{{ path('app_item') }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

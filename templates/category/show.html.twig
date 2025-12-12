@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <h1 class="display-1 text-center text-white mb-5">{{ category.name }}</h1>
+
+    {% if items is empty %}
+        <p>Aucun article dans cette catégorie.</p>
+    {% else %}
+        <table class="table w-50 mx-auto bg-white rounded-3 shadow-lg table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td><a href="{{ path('app_item_show', {'id': item.id}) }}">plus d'info</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <div class="text-center my-4 mt-5 ">
+        <a href="{{ path('app_category') }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}
