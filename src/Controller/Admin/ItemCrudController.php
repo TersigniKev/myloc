@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Item;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -28,6 +29,8 @@ class ItemCrudController extends AbstractCrudController
                 ->setBasePath('uploads')               // chemin accessible dans le navigateur
                 ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
                 ->setRequired(false),
+            AssociationField::new('category'),
+            AssociationField::new('owner')
         ];
     }
 }

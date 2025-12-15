@@ -6,7 +6,7 @@
     <h1 class="display-1 text-center text-white mb-5">Tous les objets</h1>
 
     {% if items is empty %}
-        <p>Aucun item.</p>
+        <p class="text-center text-white">Aucun item.</p>
     {% else %} 
         <div class="row row-cols-1 row-cols-md-4 g-4 w-100 mx-auto justify-content-center">
             {% for item in items %}
